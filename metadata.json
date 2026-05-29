@@ -1,0 +1,6 @@
+{
+  "name": "Dr. S. G. Biju Portfolio",
+  "description": "Premium personal authority portfolio of Dr. S. G. Biju, an internationally acclaimed Homoeopathic physician, educator, author, motivational trainer, and humanitarian.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
