@@ -4,7 +4,7 @@
  */
 
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -27,7 +27,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -41,7 +41,7 @@ export default function App() {
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

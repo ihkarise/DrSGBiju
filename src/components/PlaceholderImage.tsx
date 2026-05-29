@@ -37,6 +37,14 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
     setImgState('loaded');
   };
 
+  const getUrl = (path: string) => {
+    if (path.startsWith('/')) {
+      // Remove leading slash and prepend BASE_URL (which has a trailing slash)
+      return `${import.meta.env.BASE_URL}${path.substring(1)}`;
+    }
+    return path;
+  };
+
   return (
     <div 
       className={cn(
@@ -56,7 +64,7 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
 
       {(imgState === 'try-jpg' || imgState === 'try-png' || imgState === 'loaded') && srcBase && (
          <img 
-           src={`${srcBase}${imgState === 'try-jpg' ? '.jpg' : '.png'}`}
+           src={getUrl(`${srcBase}${imgState === 'try-jpg' ? '.jpg' : '.png'}`)}
            alt={alt || label}
            className={cn("absolute inset-0 w-full h-full object-cover transition-opacity duration-300 z-20 bg-bg-secondary", imgState === 'loaded' ? 'opacity-100' : 'opacity-0')}
            onLoad={handleSuccess}

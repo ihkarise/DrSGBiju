@@ -10,7 +10,7 @@ export default function Home() {
       {/* 1. Hero Section */}
       <section className="relative min-h-[100vh] flex items-center bg-dark-section text-white pt-[90px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/40 z-10"></div>
-        <img src="/images/home/hero-bg.jpg" alt="Hero Background" className="absolute inset-0 h-full w-full object-cover opacity-50 z-0" />
+        <img src={`${import.meta.env.BASE_URL}images/home/hero-bg.jpg`} alt="Hero Background" className="absolute inset-0 h-full w-full object-cover opacity-50 z-0" />
         
         <div className="max-w-[1200px] mx-auto px-6 w-full relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-90px)] py-20">
           <div className="order-2 lg:order-2 flex justify-center lg:justify-end">
