@@ -3,47 +3,78 @@ import { Button } from '../components/Button';
 import { PlaceholderImage } from '../components/PlaceholderImage';
 import { ArrowRight, BookOpen, GraduationCap, Heart, Image as ImageIcon, Award, Building } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion } from 'motion/react';
 
 export default function Home() {
   return (
     <div className="w-full">
       {/* 1. Hero Section */}
       <section className="relative min-h-[100vh] flex items-center bg-dark-section text-white pt-[90px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/40 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/40 to-primary z-10"></div>
         <img src={`${import.meta.env.BASE_URL}images/home/hero-bg.jpg`} alt="Hero Background" className="absolute inset-0 h-full w-full object-cover opacity-50 z-0" />
         
         <div className="max-w-[1200px] mx-auto px-6 w-full relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-90px)] py-20">
-          <div className="order-2 lg:order-2 flex justify-center lg:justify-end">
-             <div className="w-full max-w-sm lg:hidden mb-8">
+          <div className="order-1 lg:order-1 flex justify-center lg:justify-start">
+             <div className="w-full max-w-sm mb-8 lg:mb-0">
                <PlaceholderImage srcBase="/images/home/hero-portrait" aspectRatio="aspect-[3/4]" label="Main Portrait" className="rounded-2xl border-4 border-white/10" />
              </div>
           </div>
-          <div className="order-1 lg:order-1 text-center lg:text-left">
-            <h1 className="text-5xl md:text-7xl lg:text-[80px] font-playfair font-bold leading-tight mb-4 text-white">
+          <div className="order-2 lg:order-2 text-center lg:text-left">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-5xl md:text-7xl lg:text-[80px] font-playfair font-bold leading-tight mb-4 text-white"
+            >
               Dr. S. G. Biju
-            </h1>
-            <p className="text-secondary font-sans font-semibold tracking-widest uppercase text-sm md:text-base mb-6">
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-secondary font-sans font-semibold tracking-widest uppercase text-sm md:text-base mb-6"
+            >
               BHMS, MD (Hom)
-            </p>
-            <p className="text-2xl md:text-3xl font-playfair mb-6 text-gray-300">
+            </motion.p>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-2xl md:text-3xl font-playfair mb-6 text-gray-300"
+            >
               Physician. Educator. Author. Humanitarian.
-            </p>
-            <p className="text-lg text-gray-300 mb-10 leading-relaxed font-sans max-w-xl mx-auto lg:mx-0">
+            </motion.p>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-lg text-gray-300 mb-10 leading-relaxed font-sans max-w-xl mx-auto lg:mx-0"
+            >
               Internationally respected Homoeopathic physician, educator, author, and humanitarian whose professional journey spans clinical excellence, academic leadership, and human transformation.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            </motion.p>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+            >
               <Button to="/contact" variant="primary" className="w-full sm:w-auto bg-secondary text-primary hover:bg-white text-lg">
                 Book Consultation
               </Button>
-              <Button to="/contact" variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white/10 text-lg">
+              <Button to="/contact" variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white/10 text-lg animate-pop">
                 Invite for Seminar
               </Button>
-            </div>
-            <div className="mt-8">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-8"
+            >
               <Link to="/achievements" className="inline-flex items-center text-secondary hover:text-white transition-colors font-medium">
                 View Achievements <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -251,8 +282,8 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="lg:w-1/2 min-h-[400px]">
-              <PlaceholderImage srcBase="/images/home/seminar-speaker" aspectRatio="h-full w-full object-cover" label="Seminar Image" className="border-0 bg-white/10" />
+            <div className="lg:w-1/2 min-h-[400px] flex">
+              <PlaceholderImage srcBase="/images/home/seminar-speaker" aspectRatio="w-full h-full min-h-[400px]" label="Seminar Image" className="border-0 bg-white/10" />
             </div>
           </div>
         </div>

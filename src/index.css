@@ -12,6 +12,17 @@
   --color-bg-primary: #FFFFFF;
   --color-bg-secondary: #F7F8FA;
   --color-dark-section: #111827;
+
+  --animate-pop: pop 2s ease-in-out infinite;
+
+  @keyframes pop {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
 }
 
 body {

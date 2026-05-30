@@ -15,7 +15,7 @@ export default function About() {
               A Life Dedicated to Medicine, Education & Mankind.
             </p>
           </div>
-          <div className="hidden md:block">
+          <div className="w-full">
             <PlaceholderImage aspectRatio="aspect-[21/9] rounded-2xl" label="Banner Portrait" className="border-0 bg-white/10" />
           </div>
         </div>

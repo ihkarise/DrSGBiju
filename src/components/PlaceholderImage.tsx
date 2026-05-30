@@ -66,7 +66,7 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
          <img 
            src={getUrl(`${srcBase}${imgState === 'try-jpg' ? '.jpg' : '.png'}`)}
            alt={alt || label}
-           className={cn("absolute inset-0 w-full h-full object-cover transition-opacity duration-300 z-20 bg-bg-secondary", imgState === 'loaded' ? 'opacity-100' : 'opacity-0')}
+           className="absolute inset-0 w-full h-full object-cover z-20 bg-bg-secondary"
            onLoad={handleSuccess}
            onError={handleError}
          />
